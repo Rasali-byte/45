@@ -1,0 +1,11 @@
+[build]
+  command = "npm run build"
+  publish = "build"
+  base = "/" # Or you can try removing this line if it causes issues.
+             # Blank in UI is often equivalent to not setting it, or "/"
+
+[context.production.environment]
+  # This section ensures Node.js is explicitly set for production builds
+  # You can remove this entire section if the "Using PHP version" warning disappears
+  # and the build succeeds after fixing the command.
+  NODE_VERSION = "18" # Or "20" - use a stable recent Node.js LTS version
