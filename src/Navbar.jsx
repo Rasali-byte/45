@@ -1,13 +1,13 @@
-// src/Navbar.jsx
-
 import React from 'react';
+// import './Navbar.css'; // You might create this file for specific navbar styles
 
-const Navbar = () => {
+function Navbar() {
   return (
-    <nav style={{ padding: "10px", background: "#282c34", color: "white" }}>
-      <h2>My Weather App</h2>
+    <nav>
+      {/* The image shows "My Weather App", but we are changing it to "Wordle Clone" */}
+      <span>Wordle Clone</span> 
     </nav>
   );
-};
+}
 
 export default Navbar;

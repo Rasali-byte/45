@@ -1,70 +1,70 @@
 .App {
   text-align: center;
-  font-family: Arial, sans-serif;
+  font-family: 'Clear Sans', 'Helvetica Neue', Arial, sans-serif; /* A font similar to Wordle's */
+  background-color: #f3f3f3; /* Light background */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .game-container {
-  margin-top: 50px;
+  margin-top: 20px;
+  flex-grow: 1; /* Allows container to take available space */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 30px; /* Space for keyboard at bottom */
 }
 
 h1 {
-  color: #333;
+  color: #202020;
+  margin-bottom: 10px;
 }
 
 p {
-  color: #666;
+  color: #555;
+  margin-top: 0;
+  margin-bottom: 20px;
 }
 
 .message {
-  color: red; /* For error messages */
+  color: #d7263d; /* Red for error/info messages */
   font-weight: bold;
   margin-top: 10px;
+  margin-bottom: 20px;
+  padding: 8px 15px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
-.grid {
-  display: flex;
-  flex-direction: column;
-  gap: 5px; /* Space between rows */
-  margin: 20px auto;
-  width: fit-content;
-}
-
-.row {
-  display: flex;
-  gap: 5px; /* Space between boxes in a row */
-}
-
-.box {
-  width: 50px;
-  height: 50px;
-  border: 2px solid #ccc;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 2em;
+.play-again-button {
+  background-color: #6aaa64; /* Green like correct guess */
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  font-size: 1.1em;
   font-weight: bold;
-  text-transform: uppercase;
-  background-color: #fff; /* Default background */
-}
-
-/* Styles for guessed letters (will be more complex with color logic) */
-.box.guessed {
-  background-color: #eee; /* Placeholder for now */
-}
-
-button {
-  padding: 10px 20px;
-  font-size: 1em;
+  border-radius: 5px;
   cursor: pointer;
-  margin-top: 20px;
+  margin-top: 30px;
+  transition: background-color 0.2s ease;
 }
 
-/* Navbar styling (basic, adapt from your existing Navbar.css if any) */
+.play-again-button:hover {
+  background-color: #5d985a;
+}
+
+/* Basic Navbar styling (adapt from your existing Navbar.css if you have one, or move this to Navbar.css) */
 nav {
-  background-color: #282c34;
-  padding: 20px;
+  background-color: #282c34; /* Darker header */
+  padding: 15px 20px;
   color: white;
   text-align: left;
-  font-size: 1.5em;
+  font-size: 1.6em;
   font-weight: bold;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Center the "Wordle Clone" text */
 }

@@ -1,20 +1,21 @@
 import React from 'react';
-import './GuessGrid.css'; // Create this CSS file later
+import './GuessGrid.css';
 
 function GuessGrid({ guesses, currentGuess, turn, secretWord }) {
   return (
     <div className="grid">
       {guesses.map((guess, i) => {
-        const isCurrentGuess = i === turn;
+        const isCurrentGuessRow = i === turn;
+        const displayGuess = isCurrentGuessRow ? currentGuess : (guess || ''); // Show current input or submitted guess
 
         return (
           <div key={i} className="row">
             {Array(5).fill('').map((_, index) => {
-              const letter = guess ? guess[index] : (isCurrentGuess ? currentGuess[index] : '');
+              const letter = displayGuess[index] || '';
               let boxClass = 'box';
 
-              // Apply styling based on guess
-              if (guess) {
+              // Apply styling for submitted guesses
+              if (guess) { // This row has been submitted
                 if (guess[index] === secretWord[index]) {
                   boxClass += ' correct-pos'; // Green
                 } else if (secretWord.includes(guess[index])) {
@@ -22,7 +23,7 @@ function GuessGrid({ guesses, currentGuess, turn, secretWord }) {
                 } else {
                   boxClass += ' incorrect'; // Grey
                 }
-              } else if (isCurrentGuess && letter) {
+              } else if (isCurrentGuessRow && letter) {
                   boxClass += ' active-input'; // Style for current active letter
               }
 
