@@ -1,23 +1,16 @@
-import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Navbar from "./Navbar";
-import Home from "./pages/Home";
-import About from "./pages/About";
-import Contact from "./pages/Contact";
-
-// 🚫 Removed the following line that was causing the error:
-// import { WORD_LIST } from "./data/wordList"; 
+import React from 'react';
+import Navbar from './Navbar';
 
 function App() {
   return (
-    <Router>
+    <div>
       <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/contact" element={<Contact />} />
-      </Routes>
-    </Router>
+      <main style={{ padding: '20px' }}>
+        <h1>Welcome to Wordle Clone</h1>
+        <p>Try to guess the 5-letter word in 6 attempts!</p>
+        {/* Add your game board and logic here */}
+      </main>
+    </div>
   );
 }
 
